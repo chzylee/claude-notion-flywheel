@@ -1,14 +1,14 @@
 {
-  "name": "noah-second-brain",
+  "name": "noah-notion-flywheel",
   "owner": {
     "name": "Noah Lee"
   },
-  "description": "Noah's Second Brain skill suite — Notion-backed career/projects/FGC/content automation.",
+  "description": "Noah's Notion Flywheel skill suite — Notion-backed career/projects/FGC/content automation.",
   "plugins": [
     {
-      "name": "second-brain",
-      "source": "./plugins/second-brain",
-      "description": "Full Second Brain skill suite: capture, debrief, career-ops, content, and review skills."
+      "name": "notion-flywheel",
+      "source": "./plugins/notion-flywheel",
+      "description": "Full Notion Flywheel skill suite: capture, debrief, career-ops, content, and review skills."
     }
   ]
 }

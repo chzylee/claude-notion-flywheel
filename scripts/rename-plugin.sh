@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Rename the plugin directory (default: second-brain) to a new name and update
+# Rename the plugin directory (currently: notion-flywheel) to a new name and update
 # every reference in one shot. Run from the repo root:
 #
 #   bash scripts/rename-plugin.sh <new-name>
@@ -8,7 +8,7 @@
 # Touches: plugins/<old> -> plugins/<new>, .claude-plugin/marketplace.json
 # (plugin "name" + "source"), plugins/<new>/.claude-plugin/plugin.json ("name"),
 # and README.md path references. The marketplace "name" (the catalog id, e.g.
-# noah-second-brain) is left alone — change it by hand if you want to.
+# noah-notion-flywheel) is left alone — change it by hand if you want to.
 set -euo pipefail
 
 NEW="${1:-}"

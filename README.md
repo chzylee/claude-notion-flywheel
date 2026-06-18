@@ -1,6 +1,6 @@
-# Second Brain Skills
+# Notion Flywheel Skills
 
-Noah's Second Brain skill suite (29 skills) packaged as a Claude Code plugin **and** a
+Noah's Notion Flywheel skill suite (29 skills) packaged as a Claude Code plugin **and** a
 drop-in skills folder. One repo, two install routes.
 
 This repo is the **source of truth** for the skills recorded in the Notion 🛠 Skill
@@ -10,11 +10,11 @@ Notion (see [Sync with Notion](#sync-with-notion)).
 ## What's here
 
 ```
-claude-brain-skills/
+claude-notion-flywheel/
 ├── .claude-plugin/
 │   └── marketplace.json          # marketplace catalog (one plugin)
 └── plugins/
-    └── second-brain/
+    └── notion-flywheel/
         ├── .claude-plugin/
         │   └── plugin.json       # plugin manifest
         └── skills/
@@ -24,15 +24,15 @@ claude-brain-skills/
             └── ... (29 skills total)
 ```
 
-Skills auto-load from `plugins/second-brain/skills/` — each `<name>/SKILL.md` is one skill.
+Skills auto-load from `plugins/notion-flywheel/skills/` — each `<name>/SKILL.md` is one skill.
 
 ## Install — Route A: plugin marketplace (versioned, push-to-update)
 
 Push this repo to GitHub, then in Claude Code:
 
 ```
-/plugin marketplace add <your-github-user>/second-brain-skills
-/plugin install second-brain@noah-second-brain
+/plugin marketplace add <your-github-user>/claude-notion-flywheel
+/plugin install notion-flywheel@noah-notion-flywheel
 ```
 
 Installing the one plugin installs all 29 skills at once. Add the marketplace with the
@@ -48,9 +48,9 @@ no version bumping needed. (Add a `version` field if you ever want to pin releas
 `~/.claude/skills/` is shared between Claude Code and Claude Desktop, so:
 
 ```
-cp -r plugins/second-brain/skills/* ~/.claude/skills/      # personal, all projects
+cp -r plugins/notion-flywheel/skills/* ~/.claude/skills/      # personal, all projects
 # or, project-scoped (committed with a repo):
-cp -r plugins/second-brain/skills/* /path/to/repo/.claude/skills/
+cp -r plugins/notion-flywheel/skills/* /path/to/repo/.claude/skills/
 ```
 
 Each skill must end up as `~/.claude/skills/<name>/SKILL.md` (not double-nested).
@@ -88,7 +88,7 @@ skill index" / "sync my skills to Notion".
 
 ## Renaming the plugin
 
-The directory name `second-brain` is **not** baked into any skill — skills resolve
+The directory name `notion-flywheel` is **not** baked into any skill — skills resolve
 paths relative to themselves and resolve Notion targets by name. Renaming only touches
 config + docs. The one-command path:
 
@@ -96,24 +96,24 @@ config + docs. The one-command path:
 bash scripts/rename-plugin.sh <new-name>      # e.g. bash scripts/rename-plugin.sh my-brain
 ```
 
-That renames `plugins/second-brain/` → `plugins/<new-name>/` and rewrites the plugin
+That renames `plugins/notion-flywheel/` → `plugins/<new-name>/` and rewrites the plugin
 `name` + `source` in `.claude-plugin/marketplace.json`, the `name` in
 `plugins/<new-name>/.claude-plugin/plugin.json`, and the path references in this README.
 
 Doing it by hand instead? Update exactly these, then `claude plugin validate .`:
 
-1. **Rename the directory** — `plugins/second-brain/` → `plugins/<new-name>/` (use
+1. **Rename the directory** — `plugins/notion-flywheel/` → `plugins/<new-name>/` (use
    `git mv` to keep history).
 2. **`.claude-plugin/marketplace.json`** — set the plugin entry's `source` to
    `./plugins/<new-name>` and its `name` to `<new-name>`.
 3. **`plugins/<new-name>/.claude-plugin/plugin.json`** — set `name` to `<new-name>`.
-4. **README.md** — update the `plugins/second-brain/...` path references.
+4. **README.md** — update the `plugins/notion-flywheel/...` path references.
 
 Notes:
 - The plugin `name` is the install identity, so the command users run becomes
-  `/plugin install <new-name>@noah-second-brain`. Already-installed copies must
+  `/plugin install <new-name>@noah-notion-flywheel`. Already-installed copies must
   reinstall under the new name.
-- The marketplace catalog `name` (`noah-second-brain`) is **separate** from the
+- The marketplace catalog `name` (`noah-notion-flywheel`) is **separate** from the
   directory and left untouched by the script — rename it by hand only if you also
   want a new marketplace id.
 - Nothing in Notion changes: the Skill Index keys on each skill's `name`, not the
