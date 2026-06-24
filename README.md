@@ -1,9 +1,15 @@
-# TS PMO — skills (claude-notion-flywheel)
+# Noah's Claude Code skills (claude-notion-flywheel)
 
-The **TS PMO** (Task Scribe · Project Management Ops) skill suite for **Claude Code** —
-6 core project-management skills (`init-direction`, `create`, `plan`, `work-review`,
-`debrief`, `resync`) plus Noah's personal packs (career / content / system). Packaged
-as a Claude Code plugin **and** a drop-in skills folder. One repo, two install routes.
+Personal monorepo of Noah's Claude Code skills: the **TS PMO** (Task Scribe · Project
+Management Ops) project-management core (`init-direction`, `create`, `plan`,
+`work-review`, `debrief`, `resync`) plus personal packs (career / content / system).
+These are the **configured** working copies — they carry Noah's real Notion
+data-source IDs. Packaged as a Claude Code plugin **and** a drop-in skills folder.
+
+> **Shipping TS PMO?** The public, ID-agnostic product (placeholder IDs + install docs)
+> lives in its own repo: **[chzylee/ts-pmo](https://github.com/chzylee/ts-pmo)**. The 6
+> core skills here are exported there with IDs scrubbed to `{{placeholders}}` — see
+> [Shipping to ts-pmo](#shipping-to-ts-pmo).
 
 This repo is the **source of truth** for the skills recorded in the Notion 🛠 Skill
 Index. Edit SKILL.md files here, then run `sync-skill-index` to push the changes to
@@ -89,6 +95,20 @@ idempotent (re-run with no changes → nothing written) and resolves both the sk
 folder (relative to itself) and the Notion target (by searching for "🛠 Skill Index"
 by name) dynamically, so it survives a directory rename. Invoke it with "sync the
 skill index" / "sync my skills to Notion".
+
+## Shipping to ts-pmo
+
+The public product is the standalone **[chzylee/ts-pmo](https://github.com/chzylee/ts-pmo)**
+repo — the 6 core skills with every Notion data-source ID replaced by a `{{placeholder}}`.
+When you change a core skill here, re-export it:
+
+1. Copy the 6 core folders + `_SHARED-PREAMBLE.md` into `../ts-pmo/plugins/ts-pmo/skills/`.
+2. Replace each real Notion data-source ID with its placeholder
+   (`{{EFFORTS_DS_ID}}`, `{{WORK_ITEMS_DS_ID}}`, …).
+3. Keep ts-pmo's `_SHARED-PREAMBLE.md` repoint banner (the placeholder warning).
+4. Commit + push in the ts-pmo repo.
+
+Automating this (an export script, or the planned `npx ts-pmo init` repoint wizard) is a TODO.
 
 ## Renaming the plugin
 
