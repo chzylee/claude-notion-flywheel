@@ -1,6 +1,6 @@
 {
   "name": "notion-flywheel",
-  "description": "TS PMO (Task Scribe · Project Management Ops) — a Notion-backed project-management agent for Claude Code. Core skills: init-direction, create, plan, work-review, debrief, resync; plus personal career / content / system packs.",
+  "description": "Noah's personal, miscellaneous Claude Code skills — career, content, Notion/system helpers, and utilities. (The TS PMO project-management product lives at github.com/chzylee/ts-pmo.)",
   "author": {
     "name": "Noah Lee"
   }

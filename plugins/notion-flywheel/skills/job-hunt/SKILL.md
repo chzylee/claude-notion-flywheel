@@ -50,7 +50,7 @@ Populate the **💼 Job Application Tracker** (Career → Job Search 2026; data 
 
 ## Step 6 — Queue outreach for the morning
 
-Output a contacto doc (recruiter + hiring-manager message per role, ≤300 chars, in Noah's voice per `## Writing Style`, no phone number). Write it as a checkbox page under the Notion **Job Search** hub so it's ready to send in bulk.
+Output a contacto doc (recruiter + hiring-manager message per role, ≤300 chars, no phone number). **Draft every message with the Problem-Obsession framework** (`modes/_profile.md` → Outreach & Messaging Framework): engage their problem as if already on the team → show how you'd contribute (real proof, pointed forward) → think alongside them (curious, not critique). The goal is a genuine peer conversation, not a pitch — don't sell; start an interesting talk and let it flow (most important at startups/Anthropic). Voice per `## Writing Style`. Write it as a checkbox page under the Notion **Job Search** hub so it's ready to send in bulk.
 
 **Best send window (verified):** Tuesday–Thursday, 8–11 AM in the *recipient's* local time (sweet spot ~10–11 AM). Weekends/Mondays lag. Personalize one line per message (+15–40% reply rate).
 

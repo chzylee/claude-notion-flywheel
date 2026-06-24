@@ -1,21 +1,20 @@
 # Noah's Claude Code skills (claude-notion-flywheel)
 
-Personal monorepo of Noah's Claude Code skills: the **TS PMO** (Task Scribe · Project
-Management Ops) project-management core (`init-direction`, `create`, `plan`,
-`work-review`, `debrief`, `resync`) plus personal packs (career / content / system).
-These are the **configured** working copies — they carry Noah's real Notion
-data-source IDs. Packaged as a Claude Code plugin **and** a drop-in skills folder.
+A personal, miscellaneous kit of Noah's Claude Code skills — **career** (job-hunt,
+interview-prep, cover-letter, queue-job, proposal-builder, own-your-code), **content**
+(linkedin-post, content-debt-drafter, effort-storyteller, narrative-compass), **Notion /
+system helpers** (leverage-sync, ingest-project-brief, load-context, load-project-context,
+spec-pusher, sync-skill-index, template-shipper, event-ops), and **utilities** (humanizer,
+sharpen, skill-forge). Packaged as a Claude Code plugin **and** a drop-in skills folder.
 
-> **Shipping TS PMO?** The public, ID-agnostic product (placeholder IDs + install docs)
-> lives in its own repo: **[chzylee/ts-pmo](https://github.com/chzylee/ts-pmo)**. The 6
-> core skills here are exported there with IDs scrubbed to `{{placeholders}}` — see
-> [Shipping to ts-pmo](#shipping-to-ts-pmo).
+> **The TS PMO project-management product moved out.** The six PM-ops skills
+> (`init-direction` · `create` · `plan` · `work-review` · `debrief` · `resync`) now live
+> in their own free, MIT-licensed repo: **[chzylee/ts-pmo](https://github.com/chzylee/ts-pmo)**.
+> Several packs here read the TS PMO Notion workspace (🎯 Efforts, 📓 Work Log,
+> ⚡ Leverage Board), so they assume you also run TS PMO.
 
-This repo is the **source of truth** for the skills recorded in the Notion 🛠 Skill
-Index. Edit SKILL.md files here, then run `sync-skill-index` to push the changes to
-Notion (see [Sync with Notion](#sync-with-notion)). The 6 core skills share
-`plugins/notion-flywheel/skills/_SHARED-PREAMBLE.md`. Product/distribution docs live
-outside this repo (the user's Claude Projects `product` folder).
+This repo mirrors into the Notion **🛠 Skill Index** (the catalog). Edit a SKILL.md here,
+then run `sync-skill-index` to reconcile Notion.
 
 ## What's here
 
@@ -28,10 +27,10 @@ claude-notion-flywheel/
         ├── .claude-plugin/
         │   └── plugin.json       # plugin manifest
         └── skills/
-            ├── create/SKILL.md             # core 6: init-direction · create · plan
-            ├── plan/SKILL.md               #         · work-review · debrief · resync
-            ├── sync-skill-index/SKILL.md   # keeps Notion 🛠 Skill Index in sync
-            └── ... (25 skills total: 6 core + personal packs)
+            ├── job-hunt/SKILL.md
+            ├── linkedin-post/SKILL.md
+            ├── sync-skill-index/SKILL.md   # keeps the Notion 🛠 Skill Index in sync
+            └── ...                          # 21 personal skills total
 ```
 
 Skills auto-load from `plugins/notion-flywheel/skills/` — each `<name>/SKILL.md` is one skill.
@@ -41,7 +40,7 @@ Skills auto-load from `plugins/notion-flywheel/skills/` — each `<name>/SKILL.m
 Push this repo to GitHub, then in Claude Code:
 
 ```
-/plugin marketplace add <your-github-user>/claude-notion-flywheel
+/plugin marketplace add chzylee/claude-brain-skills
 /plugin install notion-flywheel@noah-notion-flywheel
 ```
 
@@ -78,8 +77,7 @@ claude plugin validate .
 ## Sync with Notion
 
 The skills here are mirrored in the Notion **🛠 Skill Index** database (the canonical
-home for skill docs — the old Skill Library page is retired). The repo is the source
-of truth; Notion is the catalog/index.
+home for skill docs). The repo is the source of truth; Notion is the catalog/index.
 
 Two skills keep them in sync:
 
@@ -90,25 +88,14 @@ Two skills keep them in sync:
 
 `sync-skill-index` enumerates every `<name>/SKILL.md`, then **creates** missing Index
 rows, **updates** changed ones, and proposes **retiring** rows whose skill no longer
-exists — always showing the full plan and writing only after you confirm. It's
-idempotent (re-run with no changes → nothing written) and resolves both the skills
-folder (relative to itself) and the Notion target (by searching for "🛠 Skill Index"
-by name) dynamically, so it survives a directory rename. Invoke it with "sync the
-skill index" / "sync my skills to Notion".
+exists — always showing the full plan and writing only after you confirm. It resolves
+both the skills folder (relative to itself) and the Notion target (by searching for
+"🛠 Skill Index" by name) dynamically, so it survives a directory rename.
 
-## Shipping to ts-pmo
-
-The public product is the standalone **[chzylee/ts-pmo](https://github.com/chzylee/ts-pmo)**
-repo — the 6 core skills with every Notion data-source ID replaced by a `{{placeholder}}`.
-When you change a core skill here, re-export it:
-
-1. Copy the 6 core folders + `_SHARED-PREAMBLE.md` into `../ts-pmo/plugins/ts-pmo/skills/`.
-2. Replace each real Notion data-source ID with its placeholder
-   (`{{EFFORTS_DS_ID}}`, `{{WORK_ITEMS_DS_ID}}`, …).
-3. Keep ts-pmo's `_SHARED-PREAMBLE.md` repoint banner (the placeholder warning).
-4. Commit + push in the ts-pmo repo.
-
-Automating this (an export script, or the planned `npx ts-pmo init` repoint wizard) is a TODO.
+> Note: the Skill Index documents **all** of Noah's skills — this personal kit **and**
+> the TS PMO core (which now lives in [chzylee/ts-pmo](https://github.com/chzylee/ts-pmo)).
+> When reconciling, point `sync-skill-index` at both repos, or it will propose retiring
+> the TS PMO core (they moved, they aren't gone).
 
 ## Renaming the plugin
 
@@ -117,7 +104,7 @@ paths relative to themselves and resolve Notion targets by name. Renaming only t
 config + docs. The one-command path:
 
 ```
-bash scripts/rename-plugin.sh <new-name>      # e.g. bash scripts/rename-plugin.sh my-brain
+bash scripts/rename-plugin.sh <new-name>      # e.g. bash scripts/rename-plugin.sh my-kit
 ```
 
 That renames `plugins/notion-flywheel/` → `plugins/<new-name>/` and rewrites the plugin
@@ -133,20 +120,4 @@ Doing it by hand instead? Update exactly these, then `claude plugin validate .`:
 3. **`plugins/<new-name>/.claude-plugin/plugin.json`** — set `name` to `<new-name>`.
 4. **README.md** — update the `plugins/notion-flywheel/...` path references.
 
-Notes:
-- The plugin `name` is the install identity, so the command users run becomes
-  `/plugin install <new-name>@noah-notion-flywheel`. Already-installed copies must
-  reinstall under the new name.
-- The marketplace catalog `name` (`noah-notion-flywheel`) is **separate** from the
-  directory and left untouched by the script — rename it by hand only if you also
-  want a new marketplace id.
-- Nothing in Notion changes: the Skill Index keys on each skill's `name`, not the
-  directory.
-
-## Data model
-
-TS PMO uses a 3-tier model — **🎯 Effort (Epic) → 🧭 Work Stream (optional) → ✅ Work
-Item** — backed by the 📓 Work Log, with a top-level Efforts Board and a 📋 Todo page
-(Today / This week). The old single Map database and the standalone Todos database are
-retired. See `plugins/notion-flywheel/skills/_MIGRATION.md` for the skill-by-skill
-record and `_SHARED-PREAMBLE.md` for the canonical IDs + field semantics.
+Nothing in Notion changes: the Skill Index keys on each skill's `name`, not the directory.

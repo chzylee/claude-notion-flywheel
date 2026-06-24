@@ -3,12 +3,12 @@
   "owner": {
     "name": "Noah Lee"
   },
-  "description": "Noah's skill suite — the TS PMO project-management agent (Notion-backed) plus personal career / content / system packs.",
+  "description": "Noah's personal, miscellaneous Claude Code skills (career / content / Notion / utilities). The TS PMO project-management product lives at github.com/chzylee/ts-pmo.",
   "plugins": [
     {
       "name": "notion-flywheel",
       "source": "./plugins/notion-flywheel",
-      "description": "TS PMO project-management skills for Claude Code (init-direction · create · plan · work-review · debrief · resync) plus personal packs."
+      "description": "Noah's personal Claude Code skills: career, content, Notion/system helpers, and utilities."
     }
   ]
 }
