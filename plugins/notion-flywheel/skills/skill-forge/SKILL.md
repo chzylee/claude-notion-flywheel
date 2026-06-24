@@ -26,6 +26,22 @@ Pin down what the skill does, when it triggers (the user phrasings/contexts), wh
 produces, and the target surface. Pull from the conversation first; only ask about real
 gaps. If told "just make it," proceed and state assumptions.
 
+### Step 1.5 — Set the rigor: basic vs. thorough
+Decide how much the skill should **interrogate before it acts** — this shapes its whole
+structure. If it's unclear which fits, ask the user.
+- **Basic (task-executor)** — does a well-scoped task in one pass, accepting optional
+  extra input to refine. Minimal questions; just do the job cleanly. *(e.g. `humanizer`:
+  it humanizes the text in front of it, taking extra direction only if offered.)*
+- **Thorough (reasoned)** — the result's quality depends on getting context right, so the
+  skill is built to **ask forcing questions, reason, and converse** before producing its
+  deliverable. *(e.g. gstack's `office-hours`: a real back-and-forth that yields a
+  thoughtful design doc.)*
+
+Pick the **lightest rigor that still reliably produces a quality result** — don't make a
+basic task conversational, and don't let a high-stakes task fire on one guess. This is the
+gstack skill contract: a thorough skill *gathers what it needs to see the task through in
+full quality*; a basic skill just executes well.
+
 ### Step 2 — Draft
 Produce together:
 - **The SKILL.md.** Conventions: `name` kebab-case (≤64 chars, no `claude`/`anthropic`);
@@ -34,9 +50,13 @@ Produce together:
   frontmatter keys limited to `name`, `description`, optional `compatibility`/`license`/
   `metadata`/`allowed-tools`; body imperative, explains *why*, under ~500 lines.
 - **The Notion doc fields:** Purpose (one sentence), Trigger (` · `-separated phrases),
-  Surface (Claude chat / Claude Code / Both — default Both), Writes to (Work Log / Map issues /
-  Core Context / Leverage Board / Efforts / Nothing (read-only)), Tools used (Notion /
+  Surface (Claude chat / Claude Code / Both — default Both), Writes to (Work Log / Work Items /
+  Work Streams / Core Context / Leverage Board / Efforts / Nothing (read-only)), Tools used (Notion /
   recent_chats / vision / web_search), How to invoke (2-4 bullets).
+
+**Match the structure to the rigor (Step 1.5):** *basic* → a tight imperative procedure that
+executes cleanly; *thorough* → an explicit **"ask what you need" / forcing-question phase** up
+front, then reasoning, then the deliverable.
 
 Show the user the proposed `name` + `description` and a short summary; confirm before building.
 

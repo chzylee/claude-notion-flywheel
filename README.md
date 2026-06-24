@@ -1,11 +1,15 @@
-# Notion Flywheel Skills
+# TS PMO — skills (claude-notion-flywheel)
 
-Noah's Notion Flywheel skill suite (29 skills) packaged as a Claude Code plugin **and** a
-drop-in skills folder. One repo, two install routes.
+The **TS PMO** (Task Scribe · Project Management Ops) skill suite for **Claude Code** —
+6 core project-management skills (`init-direction`, `create`, `plan`, `review`,
+`debrief`, `resync`) plus Noah's personal packs (career / content / system). Packaged
+as a Claude Code plugin **and** a drop-in skills folder. One repo, two install routes.
 
 This repo is the **source of truth** for the skills recorded in the Notion 🛠 Skill
 Index. Edit SKILL.md files here, then run `sync-skill-index` to push the changes to
-Notion (see [Sync with Notion](#sync-with-notion)).
+Notion (see [Sync with Notion](#sync-with-notion)). The 6 core skills share
+`plugins/notion-flywheel/skills/_SHARED-PREAMBLE.md`. Product/distribution docs live
+outside this repo (the user's Claude Projects `product` folder).
 
 ## What's here
 
@@ -18,10 +22,10 @@ claude-notion-flywheel/
         ├── .claude-plugin/
         │   └── plugin.json       # plugin manifest
         └── skills/
-            ├── capture-router/SKILL.md
-            ├── chat-debrief/SKILL.md
+            ├── create/SKILL.md             # core 6: init-direction · create · plan
+            ├── plan/SKILL.md               #         · review · debrief · resync
             ├── sync-skill-index/SKILL.md   # keeps Notion 🛠 Skill Index in sync
-            └── ... (29 skills total)
+            └── ... (25 skills total: 6 core + personal packs)
 ```
 
 Skills auto-load from `plugins/notion-flywheel/skills/` — each `<name>/SKILL.md` is one skill.
@@ -35,7 +39,7 @@ Push this repo to GitHub, then in Claude Code:
 /plugin install notion-flywheel@noah-notion-flywheel
 ```
 
-Installing the one plugin installs all 29 skills at once. Add the marketplace with the
+Installing the one plugin installs all skills at once. Add the marketplace with the
 `owner/repo` form (git), **not** a raw URL to marketplace.json — the `./plugins/...`
 relative source only resolves for git-added marketplaces.
 
@@ -119,7 +123,10 @@ Notes:
 - Nothing in Notion changes: the Skill Index keys on each skill's `name`, not the
   directory.
 
-## Migration status — complete
+## Data model
 
-This suite uses **Map issue rows** (JIRA-style epic → feature → issue); the standalone
-Todos database is retired. See `MIGRATION.md` for the per-skill record.
+TS PMO uses a 3-tier model — **🎯 Effort (Epic) → 🧭 Work Stream (optional) → ✅ Work
+Item** — backed by the 📓 Work Log, with a top-level Efforts Board and a 📋 Todo page
+(Today / This week). The old single Map database and the standalone Todos database are
+retired. See `plugins/notion-flywheel/skills/_MIGRATION.md` for the skill-by-skill
+record and `_SHARED-PREAMBLE.md` for the canonical IDs + field semantics.
