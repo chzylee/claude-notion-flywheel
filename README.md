@@ -1,7 +1,7 @@
 # TS PMO — skills (claude-notion-flywheel)
 
 The **TS PMO** (Task Scribe · Project Management Ops) skill suite for **Claude Code** —
-6 core project-management skills (`init-direction`, `create`, `plan`, `review`,
+6 core project-management skills (`init-direction`, `create`, `plan`, `work-review`,
 `debrief`, `resync`) plus Noah's personal packs (career / content / system). Packaged
 as a Claude Code plugin **and** a drop-in skills folder. One repo, two install routes.
 
@@ -23,7 +23,7 @@ claude-notion-flywheel/
         │   └── plugin.json       # plugin manifest
         └── skills/
             ├── create/SKILL.md             # core 6: init-direction · create · plan
-            ├── plan/SKILL.md               #         · review · debrief · resync
+            ├── plan/SKILL.md               #         · work-review · debrief · resync
             ├── sync-skill-index/SKILL.md   # keeps Notion 🛠 Skill Index in sync
             └── ... (25 skills total: 6 core + personal packs)
 ```

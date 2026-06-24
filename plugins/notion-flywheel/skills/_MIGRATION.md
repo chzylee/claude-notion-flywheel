@@ -14,13 +14,13 @@ The system was rebuilt from a single overloaded **Map** database (Effort/Sub-eff
 | ❌ old Map (DEAD) | `0cc8af20-2f35-4e0c-985f-67ddddd2e5b0` — trashed; never reference |
 
 ## Core suite — 6 skills (consolidated 2026-06-23, second pass)
-`init-direction` · `create` · `plan` · `review` · `debrief` · `resync`
+`init-direction` · `create` · `plan` · `work-review` · `debrief` · `resync`
 All share **[`_SHARED-PREAMBLE.md`](_SHARED-PREAMBLE.md)** (canonical IDs + User Sovereignty + field semantics + the gstack skill contract).
 
 **Consolidation (9 → 6):**
 - `new-effort` + `clarify` + `capture` → **`create`** — one tier-agnostic creation flow (Effort / Stream / Item): reads the Direction north star, fully populates, validates against goals, ends by asking next steps.
 - `daily-standup` → **`plan`** — day *and* week; sets the new Work-Items **Plan** tag (Today / This week) that drives the top-level **📋 Todo** boards.
-- `accountability-audit` + `review` → **`review`** — opens with a depth question (Quick hygiene vs. Full audit).
+- `accountability-audit` + `review` → **`work-review`** — opens with a depth question (Quick hygiene vs. Full audit).
 
 ## Retire (replaced — DONE: `git rm`'d 2026-06-23)
 - `chat-debrief`, `daily-log`, `daily-close` → **debrief**

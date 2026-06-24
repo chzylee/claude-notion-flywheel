@@ -1,6 +1,6 @@
 # Shared preamble — PM-OS core skill suite
 
-The six core skills — `init-direction`, `create`, `plan`, `review`, `debrief`,
+The six core skills — `init-direction`, `create`, `plan`, `work-review`, `debrief`,
 `resync` — inherit this. Each SKILL.md restates the IDs it needs in its own
 `Targets:` block so it stays self-contained at runtime; this file is the single
 source of truth for the IDs, the working conventions, and the field semantics.

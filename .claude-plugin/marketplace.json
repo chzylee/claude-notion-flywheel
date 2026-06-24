@@ -3,12 +3,12 @@
   "owner": {
     "name": "Noah Lee"
   },
-  "description": "Noah's Notion Flywheel skill suite — Notion-backed career/projects/FGC/content automation.",
+  "description": "Noah's skill suite — the TS PMO project-management agent (Notion-backed) plus personal career / content / system packs.",
   "plugins": [
     {
       "name": "notion-flywheel",
       "source": "./plugins/notion-flywheel",
-      "description": "Full Notion Flywheel skill suite: capture, debrief, career-ops, content, and review skills."
+      "description": "TS PMO project-management skills for Claude Code (init-direction · create · plan · work-review · debrief · resync) plus personal packs."
     }
   ]
 }

@@ -1,9 +1,9 @@
 ---
-name: review
-description: Review your work — from a quick task-set hygiene scan to a full accountability audit. Asks the depth up front, then checks whether your active work is clean (high-impact/priority items surfaced, nothing stale or orphaned) and, at depth, what's neglected vs. deliberately parked, where time actually went, and whether it matches your Direction. Triggers on "review", "review my week", "audit my work", "what am I neglecting", "is my task list clean".
+name: work-review
+description: Review your work — from a quick task-set hygiene scan to a full accountability audit. Asks the depth up front, then checks whether your active work is clean (high-impact/priority items surfaced, nothing stale or orphaned) and, at depth, what's neglected vs. deliberately parked, where time actually went, and whether it matches your Direction. Triggers on "review my work", "review my week", "work review", "audit my work", "what am I neglecting", "is my task list clean".
 ---
 
-# Review → is your work clean and on-target
+# Work-review → is your work clean and on-target
 
 > Inherits **[`_SHARED-PREAMBLE.md`](../_SHARED-PREAMBLE.md)** — User Sovereignty · canonical IDs · field semantics (priority cascade, impact locality, status ladders).
 
