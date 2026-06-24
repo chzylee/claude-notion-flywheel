@@ -40,7 +40,7 @@ Skills auto-load from `plugins/notion-flywheel/skills/` — each `<name>/SKILL.m
 Push this repo to GitHub, then in Claude Code:
 
 ```
-/plugin marketplace add chzylee/claude-brain-skills
+/plugin marketplace add chzylee/claude-notion-flywheel
 /plugin install notion-flywheel@noah-notion-flywheel
 ```
 
