@@ -62,6 +62,24 @@ value framing is strong. Fit is the byproduct of demonstrated value.
 
 ## Procedure
 
+### 0. Triage first — is a cover letter worth it here? (ask before proceeding)
+Before any drafting, judge whether spending time on a letter is the right move for
+**this** application, and get the user's go/no-go. A weak or pointless letter costs time
+and can hurt; the most valuable answer is sometimes "skip it." Weigh:
+- **Is it expected?** Required / optional / "not accepted" — read the JD or application
+  form. A required letter clears the bar by default; a form with no upload slot is a "no".
+- **Can it move the decision?** Is there a real problem-obsession angle (genuine homework
+  to do on their problem) AND at least one strong, true logged outcome to anchor it? If
+  both are thin, the letter can't do its job — say so.
+- **Is there an objection worth pre-empting?** Pivot, gap, non-traditional path raise the
+  value of a letter; a clean, on-the-nose fit lowers it (the resume already argues it).
+- **Cost vs. payoff.** Stage of the application, how much the role is worth pursuing, and
+  whether the time is better spent elsewhere (more applications, a referral, prep).
+
+Give a one-line verdict with a reason — **Worth it**, **Skip it**, or **Borderline** —
+and **ask the user to confirm before proceeding or stopping.** Don't draft on a "Skip it"
+without an explicit override. If they override, proceed; the call is theirs.
+
 ### 1. Take the input (auto-detect)
 Accept **either**:
 - a **pasted JD** (raw text or a link the user pastes), **or**
