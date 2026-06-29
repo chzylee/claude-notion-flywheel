@@ -85,14 +85,32 @@ At the end of a draft, surface 1–2 adjacent post ideas noticed while drafting 
 unspent angle, a thread planted for later). Offer to log each as a **Low-priority Map issue** (Source = Chat). The user manages whether they survive — having them on the
 sprint board is the point.
 
-### 10. Hold, then log on post
+### 10. Downside gate (final check — informs, never hard-blocks)
+The last gate before you present any draft as ready, run after drafting + humanizing.
+It **informs**; it does not hard-block. Check all seven:
+- **Defensible** — every claim survives a skeptical reply in the comments (no overclaiming).
+- **Correct** — factually right / sourced; no shaky technical claim an expert would correct.
+- **Modest** — shows, doesn't boast (concrete story, not grand claim).
+- **Generous** — no badmouthing employers/people/tools/communities.
+- **Specific** — a real concrete thing done/learned, not a generic platitude.
+- **Human** — reads natural, not AI slop (the humanizer covers this).
+- **Safe** — no confidential/proprietary or interview-specific detail.
+
+Output rules:
+- **All pass** → present the draft + a line: `✓ downside gate: clear.`
+- **Any fail** → attempt ONE revision to fix it. If it still fails, present the draft labeled
+  `⚠ NOT ADVISABLE TO POST — fails [check(s)]: [reason]. Fix: [concrete change]`, and never call
+  it ready.
+- If it can't pass without losing the substance → say plainly "not worth posting as-is, because …"
+
+### 11. Hold, then log on post
 **Never log a post until the user confirms they posted it.** On confirmation, add an
 entry to the Post Log archive (full body with line breaks, theme, narrative pillar,
 hook, hashtags, tier), and update the pillar tracker. Don't backfill hashtags onto
 older posts that didn't have them — the record should stay accurate to what actually
 shipped.
 
-### 11. Ingest interactions later (optional)
+### 12. Ingest interactions later (optional)
 When the user reports interactions ("Post 5 got 40"), log the number against that
 post. The user won't distinguish reaction types and may not count comments, so treat
 both a single interaction count and a comment count as **optional** fields — log
